@@ -4,3 +4,5 @@
 *.swa
 *.swn
 *.swm
+*.o
+*.out
