@@ -12,7 +12,7 @@ int main(int ac, char** av) {
         // this one returns a std::string
         s = ResourceManager::get("example.txt");
 
-        cout << s << endl;
+        std::cout << s << std::endl;
     }
 
     return 0;

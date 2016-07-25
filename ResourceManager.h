@@ -5,20 +5,19 @@
 #include <streambuf>
 #include <sstream>
 #include <map>
+#include <exception>
 
 
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
-using namespace std;
-
 class ResourceManager {
     public:
-        static string get(string filename);
-        static bool loadFile(string filename);
+        static std::string get(std::string filename);
+        static bool loadFile(std::string filename);
 
     private:
-        static map<string, string> files; 
+        static std::map<std::string, std::string> files; 
 };
 
 #endif

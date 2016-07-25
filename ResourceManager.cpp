@@ -1,7 +1,7 @@
 #include "ResourceManager.h"
 
 
-map<string, string> ResourceManager::files;
+std::map<std::string, std::string> ResourceManager::files;
 
 /**
  * Get the contents of a file stored in the ResourceManager::files
@@ -10,12 +10,12 @@ map<string, string> ResourceManager::files;
  *
  * @return string
  */
-string ResourceManager::get(string filename) {
-    if (ResourceManager::files.at(filename).empty()) {
-        return "";
+std::string ResourceManager::get(std::string filename) {
+    try {
+        return ResourceManager::files.at(filename);
+    } catch(std::exception &e) {
+        throw std::runtime_error(std::string("No such file: " + filename));
     }
-
-    return ResourceManager::files.at(filename);
 }
 
 /**
@@ -25,15 +25,15 @@ string ResourceManager::get(string filename) {
  *
  * @return bool
  */
-bool ResourceManager::loadFile(string filename) {
-    ifstream inFile;
+bool ResourceManager::loadFile(std::string filename) {
+    std::ifstream inFile;
     inFile.open(filename);
 
-    stringstream strStream;
+    std::stringstream strStream;
     strStream << inFile.rdbuf();
-    string content = strStream.str();
+    std::string content = strStream.str();
 
-    ResourceManager::files.insert(pair<string, string>(filename, content));
+    ResourceManager::files.insert(std::pair<std::string, std::string>(filename, content));
 
     return !ResourceManager::get(filename).empty();
 }
