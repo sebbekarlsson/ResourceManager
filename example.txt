@@ -1,0 +1,21 @@
+Automation[1] or automatic control, is the use of various control systems for
+operating equipment such as machinery, processes in factories, boilers and heat
+treating ovens, switching on telephone networks, steering and stabilization of
+ships, aircraft and other applications with minimal or reduced human
+intervention. Some processes have been completely automated.
+
+The biggest benefit of automation is that it saves labor; however, it is also
+used to save energy and materials and to improve quality, accuracy and
+precision.
+
+The term automation, inspired by the earlier word automatic
+(coming from automaton), was not widely used before 1947, when General Motors
+established an automation department.[1] It was during this time that industry
+was rapidly adopting feedback controllers, which were introduced in the
+1930s.[2]
+
+Automation has been achieved by various means including mechanical, hydraulic,
+pneumatic, electrical, electronic devices and computers, usually in
+combination.
+Complicated systems, such as modern factories, airplanes and ships typically
+use all these combined techniques.
