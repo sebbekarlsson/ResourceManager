@@ -10,7 +10,7 @@
 > into your project, and include the ResourceManager.h
 
 ## Usage
-> A small example of loading files and read them:
+> A small example of loading files and reading them:
 
         #include "ResourceManager.h"
         #include <string>
