@@ -28,10 +28,12 @@
 
 ### Writing to a loaded file inside of the RAM
 
-        ResourceManager::write("example.txt", "Hello World"); // returns true or false
+        ResourceManager::write("example.txt", "Hello World", true); // returns true or false
 
 > This will not write directly to the harddrive/filesystem, it will write to the
-> cached/RAM file.
+> cached/RAM file.<br>
+> the <b>third parameter</b> is optional, if set to `true`, it will append to
+> the file and not overwrite. (default is `false`)
 
 ### Saving/Updating a file from the RAM memory to the filesystem/harddrive
 

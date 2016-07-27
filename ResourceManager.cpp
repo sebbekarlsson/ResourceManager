@@ -74,10 +74,18 @@ bool ResourceManager::unload(std::string filename) {
  *
  * @return bool
  */
-bool ResourceManager::write(std::string filename, std::string content) {
+bool ResourceManager::write(
+        std::string filename,
+        std::string content,
+        bool append
+) {
     if (!ResourceManager::isLoaded(filename)) { return false; }
 
-    ResourceManager::files[filename] = content;
+    if (append) {
+        ResourceManager::files[filename] += content;
+    } else {
+        ResourceManager::files[filename] = content;
+    }
 
     return true;
 }
