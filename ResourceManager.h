@@ -14,10 +14,10 @@
 class ResourceManager {
     public:
         static std::string get(std::string filename);
-        static bool loadFile(std::string filename);
-
+        static bool load(std::string filename);
+        static bool unload(std::string filename);
     private:
-        static std::map<std::string, std::string> files; 
+        static std::map<std::string, std::string> files;
 };
 
 #endif

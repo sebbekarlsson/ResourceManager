@@ -25,4 +25,7 @@
             s = ResourceManager::get("example.txt");
 
             cout << s << endl;
+
+            // It's also possible to erase the file from the memory.
+            ResourceManager::unload("example.txt");
         }

@@ -25,7 +25,7 @@ std::string ResourceManager::get(std::string filename) {
  *
  * @return bool
  */
-bool ResourceManager::loadFile(std::string filename) {
+bool ResourceManager::load(std::string filename) {
     std::ifstream inFile;
     inFile.open(filename);
 
@@ -36,4 +36,15 @@ bool ResourceManager::loadFile(std::string filename) {
     ResourceManager::files.insert(std::pair<std::string, std::string>(filename, content));
 
     return !ResourceManager::get(filename).empty();
+}
+
+/**
+ * Unload a file from the memory/erase it from memory.
+ *
+ * @param string filename
+ *
+ * @return bool
+ */
+bool ResourceManager::unload(std::string filename) {
+    ResourceManager::files.erase(filename); 
 }
