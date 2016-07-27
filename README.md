@@ -10,22 +10,27 @@
 > into your project, and include the ResourceManager.h
 
 ## Usage
-> A small example of loading files and reading them:
+### Remember to include the header:
 
         #include "ResourceManager.h"
         #include <string>
 
-        std::string s;
+### Loading a file into the memory
 
-        // this one returns true or false
-        bool ok = ResourceManager::loadFile("example.txt");
+        ResourceManager::load("example.txt"); // returns true or false
 
-        if (ok) {
-            // this one returns a std::string
-            s = ResourceManager::get("example.txt");
+### Getting the content from a loaded file from the RAM
 
-            cout << s << endl;
+        ResourceManager::get("example.txt"); // returns a string
 
-            // It's also possible to erase the file from the memory.
-            ResourceManager::unload("example.txt");
-        }
+### Writing to a loaded file inside of the RAM
+
+        ResourceManager::write("example.txt", "Hello World"); // returns true or false
+
+### Saving/Updating a file from the RAM memory to the filesystem/harddrive
+
+        ResourceManager::save("example.txt"); // returns true or false
+
+### Unloading a loaded file, removing it from the RAM
+
+        ResourceManager::unload("example.txt"); // returns true or false
