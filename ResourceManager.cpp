@@ -126,3 +126,17 @@ bool ResourceManager::write_new(std::string filename, std::string content) {
 
     return true;
 }
+
+/**
+ * Check if a file exists
+ *
+ * @param string filename
+ *
+ * @return bool
+ */
+bool ResourceManager::fileExists(std::string filename) {
+    std::ifstream inFile;
+    inFile.open(filename);
+
+    return inFile.good();
+}
