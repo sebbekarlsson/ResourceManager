@@ -8,3 +8,5 @@
 *.out
 ./test
 test
+*.h.gch
+*.gch

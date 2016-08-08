@@ -108,3 +108,21 @@ bool ResourceManager::save(std::string filename) {
 
     return true;
 }
+
+/**
+ * Write text to a new file
+ *
+ * @param string filename
+ * @param string content
+ *
+ * @return bool
+ */
+bool ResourceManager::write_new(std::string filename, std::string content) {
+    std::ofstream myfile;
+
+    myfile.open(filename, std::ofstream::out | std::ofstream::trunc);
+    myfile << content;
+    myfile.close();
+
+    return true;
+}
