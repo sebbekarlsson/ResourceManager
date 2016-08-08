@@ -124,6 +124,8 @@ bool ResourceManager::write_new(std::string filename, std::string content) {
     myfile << content;
     myfile.close();
 
+    ResourceManager::load(filename);
+
     return true;
 }
 
