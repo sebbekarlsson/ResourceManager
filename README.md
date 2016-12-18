@@ -2,17 +2,14 @@
 > Easily load resources/files in C++
 
 ## Install
-> There is no good way of installing it currently, I would suggest just to
-> perform a:
 
-        git clone https://github.com/plasticboy/vim-markdown.git
-
-> into your project, and include the ResourceManager.h
+        make
+        sudo make install
 
 ## Usage
 ### Remember to include the header:
 
-        #include "ResourceManager.h"
+        #include <ResourceManager.h>
         #include <string>
 
 ### Loading a file into the memory
@@ -44,3 +41,7 @@
 ### Unloading a loaded file, removing it from the RAM
 
         ResourceManager::unload("example.txt"); // returns true or false
+
+### Compiling your project:
+
+        g++ ... -lresourcemanager
