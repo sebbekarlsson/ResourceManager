@@ -10,3 +10,4 @@
 test
 *.h.gch
 *.gch
+*.a

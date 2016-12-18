@@ -14,3 +14,9 @@ ResourceManager.o: ResourceManager.cpp ResourceManager.h
 
 clean:
 	rm *.o
+	
+install:
+	make
+	ar rvs ResourceManager.a ResourceManager.o
+	cp ResourceManager.h /usr/local/include/ResourceManager.h
+	cp ResourceManager.a /usr/local/lib/ResourceManager.a
