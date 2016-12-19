@@ -1,5 +1,7 @@
 output:\
     ResourceManager.o\
+    libresourcemanager.a\
+    libresourcemanager.so\
     main.o
 	g++\
 	    ResourceManager.o\
@@ -12,12 +14,19 @@ main.o: main.cpp
 ResourceManager.o: ResourceManager.cpp ResourceManager.h
 	g++ -c ResourceManager.cpp
 
+libresourcemanager.a: ResourceManager.o
+	ar rcs $@ $^
+
+libresourcemanager.so: ResourceManager.o
+	ar rcs $@ $^
+
 clean:
 	rm *.o
+	rm *.a
+	rm *.so
 	
 install:
 	make
-	g++ -fPIC -shared ResourceManager.cpp -o libresourcemanager.so
 	cp ResourceManager.h /usr/local/include/ResourceManager.h
-	cp ResourceManager.a /usr/local/lib/ResourceManager.a
+	cp libresourcemanager.a /usr/local/lib/libresourcemanager.a
 	cp libresourcemanager.so /usr/local/lib/libresourcemanager.so
