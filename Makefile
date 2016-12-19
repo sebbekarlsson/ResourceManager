@@ -1,15 +1,6 @@
 output:\
-    ResourceManager.o\
     libresourcemanager.a\
     libresourcemanager.so\
-    main.o
-	g++\
-	    ResourceManager.o\
-	    main.o\
-	    -o test
-
-main.o: main.cpp
-	g++ -c main.cpp
 
 ResourceManager.o: ResourceManager.cpp ResourceManager.h
 	g++ -c ResourceManager.cpp
@@ -20,11 +11,13 @@ libresourcemanager.a: ResourceManager.o
 libresourcemanager.so: ResourceManager.o
 	ar rcs $@ $^
 
+.PHONY: clean
 clean:
 	rm *.o
 	rm *.a
 	rm *.so
-	
+
+.PHONY: install
 install:
 	make
 	cp ResourceManager.h /usr/local/include/ResourceManager.h
