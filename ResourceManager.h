@@ -1,3 +1,6 @@
+#ifndef RESOURCEMANAGER_H
+#define RESOURCEMANAGER_H
+
 #include <string>
 #include <iostream>
 #include <vector>
@@ -7,9 +10,6 @@
 #include <map>
 #include <exception>
 
-
-#ifndef RESOURCEMANAGER_H
-#define RESOURCEMANAGER_H
 
 class ResourceManager {
     public:
