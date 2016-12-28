@@ -117,7 +117,7 @@ bool ResourceManager::save(std::string filename) {
  *
  * @return bool
  */
-bool ResourceManager::write_new(std::string filename, std::string content) {
+bool ResourceManager::writeNew(std::string filename, std::string content) {
     std::ofstream myfile;
 
     myfile.open(filename, std::ofstream::out | std::ofstream::trunc);

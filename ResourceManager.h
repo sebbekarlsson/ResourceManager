@@ -18,7 +18,7 @@ class ResourceManager {
         static bool unload(std::string filename);
         static bool isLoaded(std::string filename);
         static bool save(std::string filename);
-        static bool write_new(std::string filename, std::string content);
+        static bool writeNew(std::string filename, std::string content);
         static bool fileExists(std::string filename);
         static bool write(
                 std::string filename,
