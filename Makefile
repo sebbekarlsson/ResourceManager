@@ -1,6 +1,13 @@
 output:\
     libresourcemanager.a\
     libresourcemanager.so\
+    ResourceManager.o\
+    example.o 
+	g++ ResourceManager.o example.o -o test
+
+
+example.o: example.cpp
+	g++ -c example.cpp
 
 ResourceManager.o: ResourceManager.cpp ResourceManager.h
 	g++ -c ResourceManager.cpp

@@ -4,14 +4,18 @@
 std::map<std::string, std::string> ResourceManager::files;
 
 /**
- * Check if a file has been loaded to the RAM/cache
+ * Get the filemap as a std::string, used for debugging.
  *
- * @param string filename
- *
- * @return bool
+ * @return string
  */
-bool ResourceManager::isLoaded(std::string filename) {
-    return ResourceManager::files.find(filename) != ResourceManager::files.end();
+std::string ResourceManager::dump() {
+    std::string dump_string = "";
+    
+    for (auto const& ent : ResourceManager::files) {
+        dump_string += "[" + ent.first + "]:\n" + files[ent.first];
+    }
+
+    return dump_string;
 }
 
 /**
@@ -27,6 +31,17 @@ std::string ResourceManager::get(std::string filename) {
     } catch(std::exception &e) {
         throw std::runtime_error(std::string("No such file: " + filename));
     }
+}
+
+/**
+ * Check if a file has been loaded to the RAM/cache
+ *
+ * @param string filename
+ *
+ * @return bool
+ */
+bool ResourceManager::isLoaded(std::string filename) {
+    return ResourceManager::files.find(filename) != ResourceManager::files.end();
 }
 
 /**

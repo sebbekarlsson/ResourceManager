@@ -13,6 +13,7 @@
 
 class ResourceManager {
     public:
+        static std::string dump();
         static std::string get(std::string filename);
         static bool load(std::string filename);
         static bool unload(std::string filename);
