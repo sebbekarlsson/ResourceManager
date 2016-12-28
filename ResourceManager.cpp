@@ -11,7 +11,7 @@ std::map<std::string, std::string> ResourceManager::files;
 std::string ResourceManager::dump() {
     std::string dump_string = "";
     
-    for (auto const& ent : ResourceManager::files) {
+    for (auto const& ent : files) {
         dump_string += "[" + ent.first + "]:\n" + files[ent.first];
     }
 
