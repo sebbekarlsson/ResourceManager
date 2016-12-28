@@ -19,6 +19,7 @@ clean:
 
 .PHONY: install
 install:
+	make clean
 	make
 	cp ResourceManager.h /usr/local/include/ResourceManager.h
 	cp libresourcemanager.a /usr/local/lib/libresourcemanager.a
