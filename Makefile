@@ -10,13 +10,13 @@ example.o: example.cpp
 	g++ -c example.cpp
 
 ResourceManager.o: ResourceManager.cpp ResourceManager.h
-	g++ -c ResourceManager.cpp
+	g++ -c ResourceManager.cpp -fPIC
 
 libresourcemanager.a: ResourceManager.o
 	ar rcs $@ $^
 
 libresourcemanager.so: ResourceManager.o
-	ar rcs $@ $^
+	$(LINK.c) -shared $< -o $@
 
 .PHONY: clean
 clean:
